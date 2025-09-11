@@ -60,7 +60,7 @@ You need to have Python 3.11 or newer installed on your system.
 ### Option 1: Using uvx (recommended)
 
 ```bash
-uvx unofficial_cellosaurus_mcp
+uvx cellosaurus_mcp
 ```
 
 ### Option 2: MCP Client Configuration
@@ -72,7 +72,7 @@ Add to your MCP client configuration:
   "mcpServers": {
     "cellosaurus": {
       "command": "uvx",
-      "args": ["unofficial_cellosaurus_mcp"],
+      "args": ["cellosaurus_mcp"],
       "env": {
         "UV_PYTHON": "3.11"
       }
@@ -84,7 +84,7 @@ Add to your MCP client configuration:
 ### Option 3: Direct Installation
 
 ```bash
-pip install unofficial_cellosaurus_mcp
+pip install cellosaurus_mcp
 ```
 
 ## Contact
