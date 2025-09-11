@@ -5,10 +5,13 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
-# import sys
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+
 from datetime import datetime
 from importlib.metadata import metadata
-from pathlib import Path
 
 HERE = Path(__file__).parent
 

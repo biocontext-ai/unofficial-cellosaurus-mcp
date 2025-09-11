@@ -1,26 +1,16 @@
 # API
 
-## Command-line client
-
 ```{eval-rst}
-.. module:: cellosaurus_mcp.main
-.. currentmodule:: cellosaurus_mcp
+.. currentmodule:: cellosaurus_mcp.tools
 
 .. autosummary::
-    :toctree: generated
+   :toctree: generated
+   :recursive:
 
-    run_app
-```
-
-
-# Tools
-
-```{eval-rst}
-.. module:: cellosaurus_mcp.tools
-.. currentmodule:: cellosaurus_mcp
-
-.. autosummary::
-    :toctree: generated
-
-    tools.greet
+   search_cell_lines
+   get_cell_line_info
+   get_release_info
+   find_cell_lines_by_disease
+   find_cell_lines_by_tissue
+   list_available_fields
 ```
