@@ -1,3 +1,5 @@
+"""Test configuration for Cellosaurus MCP server."""
+
 from unittest.mock import AsyncMock, MagicMock
 
 import pytest
@@ -6,8 +8,8 @@ from fastmcp import FastMCP
 
 @pytest.fixture
 def mock_mcp_app():
-    """Create a mock FastMCP instance for testing."""
-    mock_app = MagicMock(spec=FastMCP)
+    """Create a mock MCP instance for testing."""
+    mock_app = MagicMock()
     mock_app.name = "Test MCP App"
 
     # Create proper mocks for tools with string names
@@ -28,3 +30,22 @@ def mock_mcp_app():
     mock_app.import_server = AsyncMock()
     mock_app.http_app = MagicMock(return_value=MagicMock())
     return mock_app
+
+
+@pytest.fixture
+def mock_cellosaurus_client():
+    """Create a mock Cellosaurus client for testing."""
+    mock_client = MagicMock()
+    mock_client.search_cell_lines = AsyncMock()
+    mock_client.get_cell_line = AsyncMock()
+    mock_client.get_release_info = AsyncMock()
+    return mock_client
+
+
+@pytest.fixture
+def fastmcp_instance():
+    """Create a FastMCP instance for testing."""
+    return FastMCP(
+        name="Test Cellosaurus MCP",
+        instructions="Test MCP server for Cellosaurus",
+    )
