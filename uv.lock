@@ -164,7 +164,7 @@ requires-dist = [
     { name = "coverage", marker = "extra == 'test'", specifier = ">=7.0.0" },
     { name = "docutils", marker = "extra == 'doc'", specifier = ">=0.8,!=0.18.*,!=0.19.*" },
     { name = "fastmcp", specifier = ">=0.15.0" },
-    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "httpx", specifier = ">=0.28.0,<=0.29.0" },
     { name = "httpx-sse", marker = "extra == 'test'", specifier = ">=0.3.0" },
     { name = "ipykernel", marker = "extra == 'doc'" },
     { name = "ipython", marker = "extra == 'doc'" },

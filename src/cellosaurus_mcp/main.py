@@ -4,8 +4,6 @@ import sys
 
 import click
 
-from .tools import *  # noqa: F403 import all tools to register them
-
 
 class EnvironmentType(enum.Enum):
     """Environment type for MCP server."""

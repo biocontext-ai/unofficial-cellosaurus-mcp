@@ -9,7 +9,7 @@ from cellosaurus_mcp.mcp import mcp
 from cellosaurus_mcp.models import CellLineRequest, CellosaurusField, ReleaseInfoRequest, SearchRequest
 
 
-@mcp.tool
+@mcp.tool()
 async def search_cell_lines(
     query: str = "id:HeLa",
     fields: list[str] | None = None,
@@ -62,7 +62,7 @@ async def search_cell_lines(
         return {"error": f"Search failed: {str(e)}"}
 
 
-@mcp.tool
+@mcp.tool()
 async def get_cell_line_info(
     accession: str,
     fields: list[str] | None = None,
@@ -96,7 +96,7 @@ async def get_cell_line_info(
         return {"error": f"Failed to get cell line info: {str(e)}"}
 
 
-@mcp.tool
+@mcp.tool()
 async def get_release_info() -> dict[str, Any]:
     """Get information about the current Cellosaurus database release.
 
@@ -112,7 +112,7 @@ async def get_release_info() -> dict[str, Any]:
         return {"error": f"Failed to get release info: {str(e)}"}
 
 
-@mcp.tool
+@mcp.tool()
 async def find_cell_lines_by_disease(
     disease: str,
     species: str = "human",
@@ -138,14 +138,14 @@ async def find_cell_lines_by_disease(
 
     query = " ".join(query_parts)
 
-    return await search_cell_lines(
+    return await search_cell_lines.fn(  # type: ignore[attr-defined]
         query=query,
         fields=fields or ["id", "ac", "di", "ox", "derived-from-site"],
         rows=limit,
     )
 
 
-@mcp.tool
+@mcp.tool()
 async def find_cell_lines_by_tissue(
     tissue: str,
     species: str = "human",
@@ -171,14 +171,14 @@ async def find_cell_lines_by_tissue(
 
     query = " ".join(query_parts)
 
-    return await search_cell_lines(
+    return await search_cell_lines.fn(  # type: ignore[attr-defined]
         query=query,
         fields=fields or ["id", "ac", "derived-from-site", "ox", "cell-type"],
         rows=limit,
     )
 
 
-@mcp.tool
+@mcp.tool()
 def list_available_fields() -> dict[str, str]:
     """Get a list of all available fields that can be requested from the Cellosaurus API.
 
