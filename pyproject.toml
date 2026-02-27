@@ -4,7 +4,7 @@ requires = [ "hatchling" ]
 
 [project]
 name = "cellosaurus_mcp"
-version = "0.0.1"
+version = "0.0.2"
 description = "Unofficial MCP server for the SIB Cellosaurus resource."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -25,7 +25,7 @@ dependencies = [
   # for debug logging (referenced from the issue template)
   # "session-info2",
   "click",
-  "fastmcp>=0.15.0",
+  "fastmcp>=0.15.0,<3",
   "httpx>=0.28.0,<=0.29.0",
   "pydantic>=2.0.0",
 ]
